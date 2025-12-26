@@ -3,24 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>AdminCodeGen - License Generator</title>
+    <!-- 모바일 화면에 맞게 스케일 조정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- 브라우저 탭/웹앱 아이콘 -->
+    <link rel="icon" href="key.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="key.ico" type="image/x-icon">
+
     <style>
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             background: #f5f5f5;
             margin: 0;
-            padding: 24px;
+            padding: 16px;
         }
         .card {
-            max-width: 540px;
-            margin: 0 auto;
+            width: 100%;
+            max-width: 320px; /* 이전 540px 정도에서 모바일용으로 대폭 축소 */
+            margin: 12px auto;
             background: #ffffff;
             border-radius: 8px;
-            padding: 20px 24px;
+            padding: 16px 18px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
         h1 {
             font-size: 18px;
             margin: 0 0 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         .field {
             margin-bottom: 16px;
@@ -34,8 +45,8 @@
         input[type="password"] {
             width: 100%;
             box-sizing: border-box;
-            padding: 6px 8px;
-            font-size: 13px;
+            padding: 8px 10px;
+            font-size: 14px;
         }
         .row {
             display: flex;
@@ -43,15 +54,16 @@
             margin-top: 8px;
         }
         button {
-            padding: 6px 16px;
-            font-size: 13px;
+            padding: 8px 12px;
+            font-size: 14px;
             cursor: pointer;
+            flex: 1;               /* 버튼이 가로로 꽉 차도록 */
         }
         .license-output {
             font-family: "Consolas", "Courier New", monospace;
         }
         .note {
-            margin-top: 12px;
+            margin-top: 10px;
             font-size: 11px;
             color: #666;
         }
@@ -69,7 +81,9 @@
 
 <!-- 로그인 카드 -->
 <div id="login-card" class="card">
-    <h1>AdminCodeGen 접속</h1>
+    <h1>
+        AdminCodeGen 접속
+    </h1>
 
     <div class="field">
         <label for="adminPassword">관리자 비밀번호</label>
